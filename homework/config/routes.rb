@@ -1,5 +1,7 @@
 MoviesApp::Application.routes.draw do
 
+  # Movie routes
+
   get '/movies', controller: 'movies', action: 'index', as: 'movies'
 
   get '/movies/new', controller: 'movies', action: 'new', as: 'new_movie'
@@ -12,5 +14,21 @@ MoviesApp::Application.routes.draw do
   post '/movies', controller: 'movies', action: 'create'
 
   delete '/movies/:id', controller: 'movies', action: 'destroy'
+
+  # Theater routes
+
+  get '/theaters', controller: 'theaters', action: 'index', as: 'theaters'
+
+  get '/theaters/new', controller: 'theaters', action: 'new', as: 'new_theater'
+
+  get '/theaters/:id', controller: 'theaters', action: 'show', as: 'theater'
+
+  get '/theaters/:id/edit', controller: 'theaters', action: 'edit', as: 'edit_theater'
+  put '/theaters/:id', controller: 'theaters', action: 'update'
+
+  post '/theaters', controller: 'theaters', action: 'create'
+
+  delete '/theaters/:id', controller: 'theaters', action: 'destroy'
+
 
 end
